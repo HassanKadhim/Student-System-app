@@ -39,6 +39,8 @@ dependencies:
   flutter_secure_storage: ^4.2.1
   flutter_dotenv:
   flutter_svg:
+  curved_navigation_bar:
+  font_awesome_flutter:
 
 dev_dependencies:
   flutter_test:
