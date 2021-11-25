@@ -1,45 +1,41 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:student_system/views/widgets/buildCard.dart';
 import '../../constants.dart';
-import 'auth/login.dart';
-
 
 class HomeScreen extends StatelessWidget {
+  const HomeScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery
-        .of(context)
-        .size; //this gonna give us total height and with of our device
+    // var size = MediaQuery.of(context).size; //this gonna give us total height and with of our device
     return Scaffold(
-      backgroundColor: kBackgroundColor,
+      backgroundColor: kPrimaryColor,
       bottomNavigationBar: CurvedNavigationBar(
-        backgroundColor: kBackgroundColor,
-        color:kTextColor ,
+        backgroundColor: kPrimaryColor,
+        color:kCardColor ,
         height: 50.0,
-        items: <Widget>[
+        items: const <Widget>[
           Center(
               child: Icon(
                 Icons.account_circle,
                 size: 30,
-                color: kBackgroundColor,
+                color: kTextColor,
               )
           ),
           Center(
               child: Icon(
                 Icons.home_filled,
                 size: 30,
-                color: kBackgroundColor,
+                color: kTextColor,
               )
           ),
           Center(
               child: Icon(
                 Icons.add_alert,
                 size: 30,
-                color: kBackgroundColor,
+                color: kTextColor,
               )
           ),
         ],
@@ -56,32 +52,27 @@ class HomeScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.end,
               children:<Widget>[
                 Padding(
-                    padding: EdgeInsets.all(20),
+                    padding: const EdgeInsets.all(20),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-
-                      Container(
-                        child: Text(
-                          'مرحباً Hassan Kadhim',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 20,
-                            color: kTitleTextColor,
-                          ),
+                    children: const [
+                      Text(
+                        'مرحباً Hassan Kadhim',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20,
+                          color: kTextColor,
                         ),
                       ),
-                      Container(
-                        child: CircleAvatar(
-                          backgroundImage: AssetImage('assets/images/logo.png'),
-                          minRadius: 27,
-                          maxRadius: 30,
-                        ),
+                      CircleAvatar(
+                        backgroundImage: AssetImage('assets/images/avtar.png'),
+                        minRadius: 27,
+                        maxRadius: 30,
                       ),
                     ],
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 40,
                 ),
                 buildCardList(),
@@ -94,36 +85,30 @@ class HomeScreen extends StatelessWidget {
   }
   buildCardList() {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 30),
+      padding: const EdgeInsets.symmetric(horizontal: 30),
       child: Column(
         children: <Widget>[
           HomeCard(
             'الدرجات ',
             'يمكن معرفة جميع الدرجات الخاصة بك',
             'assets/icons/grads.png',
-            kBlueColor,
+            '/newsletter'
           ),
-          SizedBox(
-            height: 40,
-          ),
+          const SizedBox(height: 40,),
           HomeCard(
             'االغيابات',
             'يمكنك معرفة جميع االغيابات الخاصة بك',
             'assets/icons/time.png',
-            kYellowColor,
+            '/profile'
           ),
-          SizedBox(
-            height: 40,
-          ),
+          const SizedBox(height: 40,),
           HomeCard(
             'االتنبيهات',
             'يمكنك معرفة جميع االغيابات الخاصة بك',
             'assets/icons/not.png',
-            kOrangeColor,
+            '/notification'
           ),
-          SizedBox(
-            height: 10,
-          ),
+          const SizedBox(height: 10,),
         ],
       ),
     );

@@ -1,7 +1,6 @@
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
-import 'dart:convert';
 
 import 'package:student_system/database/services/auth_service.dart';
 import 'package:student_system/routes/routes.dart';
@@ -57,12 +56,12 @@ class LoginController extends GetxController{
         );
 
         if(data != null){
-          await storage.write(key: "name" , value: data["name"], iOptions: options);
-          await storage.write(key: "token", value: data["token"], iOptions: options);
+          // await storage.write(key: "name" , value: data["name"], iOptions: options);
+          // await storage.write(key: "token", value: data["token"], iOptions: options);
           loginFromKey.currentState!.save();
-          Get.toNamed(AppRoutes.question);
+          Get.toNamed(AppRoutes.home);
         }else{
-          Get.snackbar("login", "someThink woing");
+          Get.snackbar("login", "يوجد خطاء");
         }
 
       }finally{

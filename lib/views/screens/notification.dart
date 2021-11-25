@@ -1,22 +1,23 @@
-import 'package:flutter/cupertino.dart';
+
+import 'package:flutter/material.dart';
 
 import '../../constants.dart';
 
-class NewsLetter extends StatefulWidget {
-  const NewsLetter({Key? key}) : super(key: key);
+class Notification extends StatefulWidget {
+  const Notification({Key? key}) : super(key: key);
 
   @override
-  _NewsLetterState createState() => _NewsLetterState();
+  _NotificationState createState() => _NotificationState();
 }
 
-class _NewsLetterState extends State<NewsLetter> {
+class _NotificationState extends State<Notification> {
   @override
   Widget build(BuildContext context) {
     return Container(
       color: kPrimaryColor,
       child: const Center(
         child: Text(
-          'NewsLetter',
+          'Notification',
           style: TextStyle(
             fontWeight: FontWeight.bold,
             fontSize: 20,

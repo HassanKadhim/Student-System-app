@@ -1,19 +1,21 @@
 import 'dart:convert';
-
-
 import 'package:http/http.dart' as http;
 
 
 class AuthService {
- static String baseApi = "https://api.enab.app/api";
+ static String baseApi = "http://localhost:8000/api";
  static var client = http.Client();
 
   static login({required email , password}) async {
-    var token = await client.post(Uri.parse("$baseApi/auth/login"),
-      headers: {'Content-Type': 'application/json'},
-      body: jsonEncode(<String , String>{
+    var headers = {
+      "Accept": "*/*",
+      "Access-Control-Allow-Origin": "*",
+      "Connection": "keep-alive"
+    };
+    var token = await http.post(Uri.parse("$baseApi/auth/login"),
+      body: {
         "email": email , "password" : password
-      }),
+      },
     );
 
      if(token.statusCode == 200 || token.statusCode == 201){

@@ -2,14 +2,14 @@ import 'package:flutter/cupertino.dart';
 
 import '../../constants.dart';
 
-class NewsLetter extends StatefulWidget {
-  const NewsLetter({Key? key}) : super(key: key);
+class Nots extends StatefulWidget {
+  const Nots({Key? key}) : super(key: key);
 
   @override
-  _NewsLetterState createState() => _NewsLetterState();
+  _NotsState createState() => _NotsState();
 }
 
-class _NewsLetterState extends State<NewsLetter> {
+class _NotsState extends State<Nots> {
   @override
   Widget build(BuildContext context) {
     return Container(

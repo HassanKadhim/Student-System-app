@@ -8,41 +8,36 @@ class HomeCard extends StatelessWidget {
   var _name;
   var _description;
   var _imageUrl;
-  var _bgColor;
+  var _route;
 
-  HomeCard(this._name, this._description, this._imageUrl, this._bgColor);
+  HomeCard(this._name, this._description, this._imageUrl, this._route);
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => Profile(),
-          ),
-        );
+        Navigator.pushNamed(context, _route);
       },
       child: DecoratedBox(
         decoration: BoxDecoration(
-          color: _bgColor.withOpacity(0.7),
+          color: kCardColor.withOpacity(0.7),
           borderRadius: BorderRadius.circular(24),
         ),
         child: Padding(
           padding: EdgeInsets.all(10),
           child: ListTile(
-            leading: Image.asset(_imageUrl, color: kTextColor),
+            leading: Image.asset(_imageUrl),
             title: Text(
               _name,
               style: TextStyle(
-                color: kTitleTextColor,
+                color: kTextColor,
                 fontWeight: FontWeight.bold,
               ),
             ),
             subtitle: Text(
               _description,
               style: TextStyle(
-                color: kTitleTextColor.withOpacity(0.7),
+                color: kTextColor.withOpacity(0.7),
               ),
             ),
           ),
