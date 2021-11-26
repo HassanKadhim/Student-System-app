@@ -12,7 +12,7 @@ void main() {
           fontFamily: "NotoKufiArabic",
           primarySwatch: Colors.blue,
         ),
-        initialRoute: AppRoutes.pro,
+        initialRoute: AppRoutes.splash,
         getPages: AppRoutes.routes ,
       ),
   );

@@ -4,12 +4,19 @@ import 'package:flutter/material.dart';
 import 'package:student_system/views/widgets/buildCard.dart';
 import '../../constants.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
   @override
+  _HomeScreenState createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+
+
+
+  @override
   Widget build(BuildContext context) {
-    // var size = MediaQuery.of(context).size; //this gonna give us total height and with of our device
     return Scaffold(
       backgroundColor: kPrimaryColor,
       bottomNavigationBar: CurvedNavigationBar(
@@ -52,7 +59,7 @@ class HomeScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.end,
               children:<Widget>[
                 Padding(
-                    padding: const EdgeInsets.all(20),
+                  padding: const EdgeInsets.all(20),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: const [
@@ -89,24 +96,24 @@ class HomeScreen extends StatelessWidget {
       child: Column(
         children: <Widget>[
           HomeCard(
-            'الدرجات ',
-            'يمكن معرفة جميع الدرجات الخاصة بك',
-            'assets/icons/grads.png',
-            '/newsletter'
+              'الدرجات ',
+              'يمكن معرفة جميع الدرجات الخاصة بك',
+              'assets/icons/grads.png',
+              '/grade'
           ),
           const SizedBox(height: 40,),
           HomeCard(
-            'االغيابات',
-            'يمكنك معرفة جميع االغيابات الخاصة بك',
-            'assets/icons/time.png',
-            '/profile'
+              'االغيابات',
+              'يمكنك معرفة جميع االغيابات الخاصة بك',
+              'assets/icons/time.png',
+              '/time'
           ),
           const SizedBox(height: 40,),
           HomeCard(
-            'االتنبيهات',
-            'يمكنك معرفة جميع االغيابات الخاصة بك',
-            'assets/icons/not.png',
-            '/notification'
+              'االتنبيهات',
+              'يمكنك معرفة جميع االغيابات الخاصة بك',
+              'assets/icons/not.png',
+              '/not'
           ),
           const SizedBox(height: 10,),
         ],
@@ -114,3 +121,5 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
+
+

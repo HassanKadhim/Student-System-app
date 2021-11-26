@@ -1,5 +1,7 @@
 
 import 'package:flutter/material.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:student_system/views/screens/profile.dart';
 
 import '../../constants.dart';
@@ -16,7 +18,7 @@ class HomeCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Navigator.pushNamed(context, _route);
+        Get.toNamed(_route);
       },
       child: DecoratedBox(
         decoration: BoxDecoration(

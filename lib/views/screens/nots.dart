@@ -16,7 +16,7 @@ class _NotsState extends State<Nots> {
       color: kPrimaryColor,
       child: const Center(
         child: Text(
-          'NewsLetter',
+          'nota',
           style: TextStyle(
             fontWeight: FontWeight.bold,
             fontSize: 20,

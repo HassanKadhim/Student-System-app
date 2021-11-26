@@ -1,23 +1,22 @@
-
 import 'package:flutter/material.dart';
 
-import '../../constants.dart';
+import '../../../constants.dart';
 
-class Notification extends StatefulWidget {
-  const Notification({Key? key}) : super(key: key);
+class Time extends StatefulWidget {
+  const Time({Key? key}) : super(key: key);
 
   @override
-  _NotificationState createState() => _NotificationState();
+  _TimeState createState() => _TimeState();
 }
 
-class _NotificationState extends State<Notification> {
+class _TimeState extends State<Time> {
   @override
   Widget build(BuildContext context) {
     return Container(
       color: kPrimaryColor,
       child: const Center(
         child: Text(
-          'Notification',
+          'Time',
           style: TextStyle(
             fontWeight: FontWeight.bold,
             fontSize: 20,
