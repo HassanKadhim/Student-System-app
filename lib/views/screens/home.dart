@@ -1,23 +1,18 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+import 'package:get/get.dart';
+import 'package:student_system/logic/controllers/user_controller.dart';
 import 'package:student_system/views/widgets/buildCard.dart';
 import '../../constants.dart';
 
-class HomeScreen extends StatefulWidget {
+class HomeScreen extends GetView<UserController> {
   const HomeScreen({Key? key}) : super(key: key);
 
   @override
-  _HomeScreenState createState() => _HomeScreenState();
-}
-
-class _HomeScreenState extends State<HomeScreen> {
-
-
-
-  @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return controller.obx((data) => Scaffold(
       backgroundColor: kPrimaryColor,
       bottomNavigationBar: CurvedNavigationBar(
         backgroundColor: kPrimaryColor,
@@ -56,38 +51,38 @@ class _HomeScreenState extends State<HomeScreen> {
           child: Directionality(
             textDirection: TextDirection.rtl,
             child :Column(
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children:<Widget>[
-                Padding(
-                  padding: const EdgeInsets.all(20),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: const [
-                      Text(
-                        'مرحباً Hassan Kadhim',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20,
-                          color: kTextColor,
-                        ),
-                      ),
-                      CircleAvatar(
-                        backgroundImage: AssetImage('assets/images/avtar.png'),
-                        minRadius: 27,
-                        maxRadius: 30,
-                      ),
-                    ],
-                  ),
-                ),
-                const SizedBox(
-                  height: 40,
-                ),
-                buildCardList(),
-              ],
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children:<Widget>[
+            Padding(
+            padding: const EdgeInsets.all(20),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children:  [
+              Text(data['email'],
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 20,
+                color: kTextColor,
+              ),
             ),
+            CircleAvatar(
+              backgroundImage: AssetImage('assets/images/avtar.png'),
+              minRadius: 27,
+              maxRadius: 30,
+            ),
+            ],
           ),
         ),
+        const SizedBox(
+          height: 40,
+        ),
+        buildCardList(),
+        ],
       ),
+    ),
+    ),
+    ),
+    ),
     );
   }
   buildCardList() {
@@ -121,5 +116,6 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
+
 
 

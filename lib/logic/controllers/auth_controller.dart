@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:student_system/routes/routes.dart';
 
 class AuthController extends GetxController{
-  var storage =  const FlutterSecureStorage();
+    var storage =  const FlutterSecureStorage();
   var name = ''.obs;
   var token = '';
 

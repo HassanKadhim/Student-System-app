@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 import 'package:student_system/logic/bindings/login_binding.dart';
 import 'package:student_system/logic/bindings/question_binding.dart';
+import 'package:student_system/logic/bindings/user_binding.dart';
 import 'package:student_system/views/question/question_view.dart';
 import 'package:student_system/views/screens/auth/login.dart';
 import 'package:student_system/views/screens/grade/grade.dart';
@@ -26,7 +27,7 @@ class AppRoutes {
 
   static final routes = [
     GetPage(name: login, page: () =>  const LoginPage(), binding: LoginBinding()),
-    GetPage(name: home, page: () =>  const HomeScreen(), binding: LoginBinding()),
+    GetPage(name: home, page: () =>  const HomeScreen(), binding: UserBinding()),
     GetPage(name: splash, page: () =>   SplashScreen(), binding: LoginBinding()),
     GetPage(name: time, page: () =>  const Time()),
     GetPage(name: grade, page: () =>  const Grade()),
