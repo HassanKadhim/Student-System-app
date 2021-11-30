@@ -6,6 +6,8 @@ import 'package:student_system/routes/routes.dart';
 
 
 class SplashScreen extends StatefulWidget {
+  const SplashScreen({Key? key}) : super(key: key);
+
   @override
   State<StatefulWidget> createState() => StartState();
 }

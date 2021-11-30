@@ -12,7 +12,7 @@ class HomeScreen extends GetView<UserController> {
 
   @override
   Widget build(BuildContext context) {
-    return controller.obx((data) => Scaffold(
+    return Scaffold(
       backgroundColor: kPrimaryColor,
       bottomNavigationBar: CurvedNavigationBar(
         backgroundColor: kPrimaryColor,
@@ -54,11 +54,12 @@ class HomeScreen extends GetView<UserController> {
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children:<Widget>[
             Padding(
-            padding: const EdgeInsets.all(20),
+            padding: const EdgeInsets.only(top: 10,left: 20,right: 20,bottom: 5),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children:  [
-              Text(data['email'],
+              Text(
+              "مرحباً حسن كاظم",
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 20,
@@ -73,13 +74,13 @@ class HomeScreen extends GetView<UserController> {
             ],
           ),
         ),
+      const  Divider(color: kTextColor, thickness: 0.1),
         const SizedBox(
           height: 40,
         ),
         buildCardList(),
         ],
       ),
-    ),
     ),
     ),
     ),
@@ -108,7 +109,7 @@ class HomeScreen extends GetView<UserController> {
               'االتنبيهات',
               'يمكنك معرفة جميع االغيابات الخاصة بك',
               'assets/icons/not.png',
-              '/not'
+              '/newsletter'
           ),
           const SizedBox(height: 10,),
         ],

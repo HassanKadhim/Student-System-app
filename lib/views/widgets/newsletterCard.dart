@@ -2,13 +2,11 @@ import 'package:flutter/material.dart';
 
 import '../../constants.dart';
 
-class GradCard extends StatelessWidget {
-  var _sbjectName;
-  var _gredeName;
-  var _dgre;
+class NewsLetterCard extends StatelessWidget {
+  var _title;
+  var _body;
 
-  GradCard (this._sbjectName, this._gredeName, this._dgre);
-
+  NewsLetterCard (this._title, this._body, );
   @override
   Widget build(BuildContext context) {
     return DecoratedBox(
@@ -25,43 +23,32 @@ class GradCard extends StatelessWidget {
             ),
             decoration: BoxDecoration(
               gradient: LinearGradient(
-              colors: [
-              Color(0xff11ccef),
-              Color(0xff117bef),
-              ],),
-              color: kCategoryTextColor.withOpacity(0.5),
-              borderRadius: BorderRadius.circular(10),
+                colors: [
+                  Color(0xff11ccef),
+                  Color(0xff117bef),
+                ],),
+              color: kCategoryTextColor.withOpacity(0.8),
+              borderRadius: BorderRadius.circular(200),
             ),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                Text(
-                  _dgre,
-                  style:  TextStyle(
-                    color: kTextColor,
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                Text('درجة',
-                  style: TextStyle(
-                    color: kTextColor,
-                    fontSize: 10,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
+               Icon(
+                 Icons.chat_bubble_outline_outlined,
+                color:kTextColor ,
+               )
               ],
             ),
           ),
           title: Text(
-            _sbjectName,
+            _title,
             style: TextStyle(
               fontWeight: FontWeight.bold,
               color: kTextColor,
             ),
           ),
           subtitle: Text(
-            _gredeName,
+            _body,
             style: TextStyle(
               color: kTextColor.withOpacity(0.7),
             ),

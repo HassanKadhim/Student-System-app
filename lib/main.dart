@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:student_system/routes/routes.dart';
 import 'package:get/get.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 
-
-void main() {
+void main() async {
   runApp(
       GetMaterialApp(
         title: 'نظام ادارة الطلاب',
@@ -16,5 +16,6 @@ void main() {
         getPages: AppRoutes.routes ,
       ),
   );
+  await FirebaseMessaging.instance.subscribeToTopic('to');
 }
 

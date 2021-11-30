@@ -41,6 +41,7 @@ dependencies:
   flutter_svg:
   curved_navigation_bar:
   font_awesome_flutter:
+  firebase_messaging: ^11.1.0
 
 dev_dependencies:
   flutter_test:
