@@ -1,50 +1,22 @@
-import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+
 import 'package:get/get.dart';
-import 'package:student_system/logic/controllers/user_controller.dart';
+import 'package:student_system/logic/controllers/home_controller.dart';
+import 'package:student_system/views/widgets/bottomnavigationbar.dart';
+
 import 'package:student_system/views/widgets/buildCard.dart';
 import '../../constants.dart';
 
-class HomeScreen extends GetView<UserController> {
-  const HomeScreen({Key? key}) : super(key: key);
+class HomeScreen extends GetView<HomeController> {
+   HomeScreen({Key? key}) : super(key: key);
+
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: kPrimaryColor,
-      bottomNavigationBar: CurvedNavigationBar(
-        backgroundColor: kPrimaryColor,
-        color:kCardColor ,
-        height: 50.0,
-        items: const <Widget>[
-          Center(
-              child: Icon(
-                Icons.account_circle,
-                size: 30,
-                color: kTextColor,
-              )
-          ),
-          Center(
-              child: Icon(
-                Icons.home_filled,
-                size: 30,
-                color: kTextColor,
-              )
-          ),
-          Center(
-              child: Icon(
-                Icons.add_alert,
-                size: 30,
-                color: kTextColor,
-              )
-          ),
-        ],
-        onTap: (index) {
-          //Handle button tap
-        },
-      ),
       body:SafeArea(
         bottom: false,
         child:SingleChildScrollView(
@@ -58,8 +30,7 @@ class HomeScreen extends GetView<UserController> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children:  [
-              Text(
-              "مرحباً حسن كاظم",
+              Text("مرحباً" " "+controller.name.toString(),
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 20,
@@ -84,6 +55,7 @@ class HomeScreen extends GetView<UserController> {
     ),
     ),
     ),
+      bottomNavigationBar:HomeBottomNavigationBar(),
     );
   }
   buildCardList() {

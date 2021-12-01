@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:student_system/views/widgets/bottomnavigationbar.dart';
 
 import '../../constants.dart';
 
@@ -9,6 +10,7 @@ class Profile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: kPrimaryColor,
+        bottomNavigationBar:HomeBottomNavigationBar(),
         body: SingleChildScrollView(
           child: Directionality(
             textDirection: TextDirection.rtl,
