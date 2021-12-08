@@ -7,7 +7,7 @@ import 'package:student_system/database/models/newsletter_model.dart';
 class NewsLetterService{
   Future<List<NewsLetter>> getNewsLetter() async{
     http.Response response = await http.get(
-        Uri.parse("http://192.168.1.108:8000/api/newsletter")
+        Uri.parse("http://192.168.1.103:8000/api/newsletter")
     );
     if(response.statusCode == 200 || response.statusCode == 201){
       List<NewsLetter> newsletter =[];

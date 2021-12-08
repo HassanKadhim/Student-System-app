@@ -32,7 +32,7 @@ class AppRoutes {
     GetPage(name: grade, page: () =>  const Grade()),
     GetPage(name: not, page: () =>  const Nots()),
     GetPage(name: newsletter, page: () =>   NewsLetterScreen(),binding: NewsLetterBinding()),
-    GetPage(name: profile, page: () =>  const Profile()),
+    GetPage(name: profile, page: () =>   Profile(),binding: LoginBinding()),
   ];
 }
 
