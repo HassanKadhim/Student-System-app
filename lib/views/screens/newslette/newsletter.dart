@@ -21,8 +21,8 @@ class NewsLetterScreen extends GetView<NewsLetterController> {
           bottom: false,
           child: Directionality(
             textDirection: TextDirection.rtl,
-              child: controller.obx((state)=> NewsLetterList( controller.newslette),)
-          ),
+              child:  controller.obx((state)=> NewsLetterList( controller.newslette),)
+        ),
         ),
       ),
     );

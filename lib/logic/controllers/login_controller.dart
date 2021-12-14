@@ -1,8 +1,13 @@
+import 'dart:convert';
+
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
+import 'package:student_system/database/models/user_model.dart';
 import 'package:student_system/database/services/auth_service.dart';
 import 'package:student_system/routes/routes.dart';
+
+import '../../config.dart';
 
 
 class LoginController extends GetxController{
@@ -52,6 +57,10 @@ class LoginController extends GetxController{
           password: passwordController.text
         );
         if(data != null){
+          // Set User Details
+
+
+
           await storage.write(key: "name" , value: data["name"], iOptions: options);
           await storage.write(key: "token", value: data["token"], iOptions: options);
           loginFromKey.currentState!.save();
@@ -64,5 +73,7 @@ class LoginController extends GetxController{
       }
     }
   }
+
+
 
 }

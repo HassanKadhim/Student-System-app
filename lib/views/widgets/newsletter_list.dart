@@ -10,16 +10,16 @@ class NewsLetterList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-        itemCount: this.newslette.length,
-        itemBuilder:(BuildContext context, int position){
-          return Padding(
-            padding: const EdgeInsets.only(top: 15.0),
-            child: NewsLetterCard(
-                newslette[position].title,
-                newslette[position].body,
-            ),
-          );
-        }
+      itemCount: this.newslette.length,
+      itemBuilder:(BuildContext context, int position){
+        return Padding(
+          padding: const EdgeInsets.only(top: 15.0),
+          child: NewsLetterCard(
+              newslette[position].title,
+              newslette[position].body,
+          ),
+        );
+      }
     );
   }
 }

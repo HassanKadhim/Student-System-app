@@ -1,23 +1,24 @@
+import 'dart:convert';
+import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:get/get.dart';
 
+
+
 class HomeController extends GetxController {
   RxInt selectedIndex = 1.obs;
   var name =''.obs;
+  var storage =  const FlutterSecureStorage();
 
   @override
   void onInit() async {
-    name = (await FlutterSecureStorage().read(key: 'name')) as RxString;
-    // Future getData(String key) async {
-    //   // var getData = await  FlutterSecureStorage().read(key: key);
-    //   return getData;
-    // }
-    // getData('name').then((value){
-    //   name = value;
-    // });
-
-
+    getName();
+    // fetch();
+    super.onInit();
+  }
+  getName() async {
+    name.value = (await storage.read(key: "name"))!;
   }
 
 

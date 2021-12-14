@@ -3,11 +3,15 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:student_system/database/models/newsletter_model.dart';
 
+import '../../config.dart';
+
 
 class NewsLetterService{
+
   Future<List<NewsLetter>> getNewsLetter() async{
+    final api = await Config.api;
     http.Response response = await http.get(
-        Uri.parse("http://192.168.1.103:8000/api/newsletter")
+        Uri.parse("$api/newsletter")
     );
     if(response.statusCode == 200 || response.statusCode == 201){
       List<NewsLetter> newsletter =[];
