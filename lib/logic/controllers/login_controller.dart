@@ -1,5 +1,6 @@
 import 'dart:convert';
-
+import 'package:http/http.dart' as http;
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
@@ -22,6 +23,7 @@ class LoginController extends GetxController{
   void onInit() {
     emailController = TextEditingController();
     passwordController = TextEditingController();
+
     super.onInit();
   }
 
@@ -29,8 +31,11 @@ class LoginController extends GetxController{
   void dispose() {
     emailController.dispose();
     passwordController.dispose();
+
     super.dispose();
   }
+
+
 
   String? valideateEmail(String value){
     if(!GetUtils.isEmail(value)){
@@ -46,6 +51,18 @@ class LoginController extends GetxController{
       return null;
     }
   }
+  static Future sendFierTokent() async {
+    var fiertoken = await FirebaseMessaging.instance.getToken();
+    final api = await Config.api;
+    var  token =  await FlutterSecureStorage().read(key: "token");
+    await http.post(
+        Uri.parse("$api/auth/sendfiertoken"),
+        headers: {"Authorization": "Bearer " + token!},
+        body:{
+          "fiertoken":fiertoken.toString()
+        }
+    );
+  }
 
   doLogin() async{
     bool isValidate = loginFromKey.currentState!.validate();
@@ -57,14 +74,16 @@ class LoginController extends GetxController{
           password: passwordController.text
         );
         if(data != null){
+
           // Set User Details
-
-
-
           await storage.write(key: "name" , value: data["name"], iOptions: options);
+          await storage.write(key: "email", value: data["email"], iOptions: options);
           await storage.write(key: "token", value: data["token"], iOptions: options);
+          await storage.write(key: "profile_photo_path", value: data["profile_photo_path"], iOptions: options);
           loginFromKey.currentState!.save();
+          sendFierTokent();
           Get.offAllNamed(AppRoutes.home);
+
         }else{
           Get.snackbar("الدخول", "يوجد خطاء");
         }

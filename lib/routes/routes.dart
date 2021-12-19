@@ -1,11 +1,13 @@
 import 'package:get/get.dart';
 import 'package:student_system/logic/bindings/login_binding.dart';
 import 'package:student_system/logic/bindings/newsletter_binding.dart';
+import 'package:student_system/logic/bindings/profile_binding.dart';
 import 'package:student_system/logic/bindings/student_binding.dart';
 import 'package:student_system/logic/bindings/user_binding.dart';
 import 'package:student_system/views/screens/auth/login.dart';
 import 'package:student_system/views/screens/grade/grade.dart';
 import 'package:student_system/views/screens/home.dart';
+import 'package:student_system/views/screens/newslette/detils.dart';
 import 'package:student_system/views/screens/newslette/newsletter.dart';
 import 'package:student_system/views/screens/notification/notification.dart';
 import 'package:student_system/views/screens/profile.dart';
@@ -23,6 +25,7 @@ class AppRoutes {
   static const profile = '/profile';
   static const question = '/question';
   static const splash = '/splash';
+  static const details = '/details';
 
 
   static final routes = [
@@ -33,7 +36,8 @@ class AppRoutes {
     GetPage(name: grade, page: () =>  const Grade(), binding: StudentBinding()),
     GetPage(name: not, page: () =>  const Notification(), binding: StudentBinding()),
     GetPage(name: newsletter, page: () =>   NewsLetterScreen(),binding: NewsLetterBinding()),
-    GetPage(name: profile, page: () =>   Profile(),binding: LoginBinding()),
+    GetPage(name: details, page: () =>   Details(),binding: NewsLetterBinding()),
+    GetPage(name: profile, page: () =>   Profile(),binding: ProfileBinding()),
 
   ];
 }

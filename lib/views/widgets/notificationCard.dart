@@ -5,9 +5,12 @@ import '../../constants.dart';
 class NotificationCard extends StatelessWidget {
   var _title;
   var _body;
+  var _color ;
 
-  NotificationCard (this._title, this._body, );
+
+  NotificationCard (this._title, this._body, this._color );
   @override
+
   Widget build(BuildContext context) {
     return DecoratedBox(
       decoration: BoxDecoration(
@@ -22,12 +25,9 @@ class NotificationCard extends StatelessWidget {
               horizontal: 16,
             ),
             decoration: BoxDecoration(
-              gradient: LinearGradient(
-                colors: [
-                  Color(0xff11ccef),
-                  Color(0xff117bef),
-                ],),
-              color: kCategoryTextColor.withOpacity(0.8),
+
+              color: Color(int.parse(_color)).withOpacity(0.8) ,
+              // color: kDengerColor.withOpacity(0.8),
               borderRadius: BorderRadius.circular(200),
             ),
             child: Column(

@@ -1,4 +1,5 @@
 import 'package:student_system/database/models/notification_model.dart';
+import 'package:student_system/database/models/stage_model.dart';
 import 'package:student_system/database/models/time_model.dart';
 
 import 'grade_model.dart';
@@ -18,6 +19,7 @@ class StudentModel{
   List<GradeModel> grades = [];
   List<TimeModel> timesheets = [];
   List<NotificationModel> notifications = [];
+  StageModel stage = StageModel();
 
   StudentModel({
     id,
@@ -43,6 +45,7 @@ class StudentModel{
     phoneNumber = json['phoneNumber'];
     type = json['type'];
 
+
     if (json.containsKey("grades")) {
       for (var grade in json['grades']){
         grades.add(GradeModel.fromJson(grade));
@@ -57,6 +60,10 @@ class StudentModel{
       for (var notification in json['notifications']){
         notifications.add(NotificationModel.fromJson(notification));
       }
+    }
+
+    if (json.containsKey('stage')) {
+      stage = StageModel.fromJson(json['stage']);
     }
 
   }

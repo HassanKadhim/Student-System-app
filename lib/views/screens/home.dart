@@ -9,7 +9,7 @@ import '../../constants.dart';
 
 class HomeScreen extends GetView<HomeController> {
   const HomeScreen({Key? key}) : super(key: key);
-
+  static var api = 'https://basrtnapi.itourstory.com/storage';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,30 +24,29 @@ class HomeScreen extends GetView<HomeController> {
               children:<Widget>[
                 Padding(
                   padding: const EdgeInsets.only(top: 10,left: 20,right: 20,bottom: 5),
-                  child:
-                  Row(
+                  child: Obx(()=>  Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children:  [
-                      Obx(()=>
-                          Text('مرحباً ${controller.name.value}',
-                            style: const TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20,
-                              color: kTextColor,
-                            ),
-                          ),
+
+                      Text('مرحباً ${controller.name.value}',
+                        style: const TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20,
+                          color: kTextColor,
+                        ),
                       ),
                       GestureDetector(
                         onTap: ()=> Get.offAndToNamed(AppRoutes.profile),
-                        child: const CircleAvatar(
-                          backgroundImage: AssetImage('assets/images/avtar.png'),
-                          minRadius: 27,
-                          maxRadius: 30,
+                        child:  CircleAvatar(
+                          backgroundColor: kCategoryTextColor,
+                          backgroundImage: controller.profilePhoto.value.isNotEmpty ?
+                          NetworkImage('$api/${controller.profilePhoto.value}'):
+                          NetworkImage('$api/student/img/avtar.png')
                         ),
                       ),
                     ],
+                  ),),
                   ),
-                ),
                 const  Divider(color: kTextColor, thickness: 0.1),
                 const SizedBox(
                   height: 40,

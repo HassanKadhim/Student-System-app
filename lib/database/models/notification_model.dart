@@ -6,6 +6,7 @@ class NotificationModel {
   int id = 0;
   String title ='';
   String body ='';
+  String color ='';
 
 
   NotificationModel({id, title, body});
@@ -14,6 +15,7 @@ class NotificationModel {
     id = json['id'];
     title = json['title'];
     body = json['body'];
+    color = json['color'];
   }
 
   Map<dynamic, dynamic> toJson() {

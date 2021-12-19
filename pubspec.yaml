@@ -37,9 +37,8 @@ dependencies:
   get:
   http:
   flutter_secure_storage: ^4.2.1
-
-
   font_awesome_flutter:
+  firebase_core:
   firebase_messaging: ^11.1.0
 
 

@@ -1,10 +1,9 @@
 import 'dart:convert';
-
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
-import 'package:student_system/database/models/grade_model.dart';
 import 'package:student_system/database/models/notification_model.dart';
+import 'package:student_system/database/models/stage_model.dart';
 import 'package:student_system/database/models/student_model.dart';
 import 'package:student_system/database/models/time_model.dart';
 import '../../config.dart';
@@ -13,7 +12,7 @@ class StudentController  extends GetxController with StateMixin{
   Rx<StudentModel> student = StudentModel().obs;
   Rx<TimeModel> time = TimeModel().obs;
   Rx<NotificationModel> notification = NotificationModel().obs;
-
+  Rx<StageModel> stage = StageModel().obs;
   @override
   void onInit() {
     fetch();
@@ -35,9 +34,13 @@ class StudentController  extends GetxController with StateMixin{
       student.value = StudentModel.fromJson(response);
 
     }
-    //print('=====================================================');
+    // print('=====================================================');
     // for(NotificationModel i in student.value.notifications){
-    //   print(i.title);
+    //   print(i.color);
+    // }
+    // print(student.value.stage.name);
+    // for(StageModel i in student.value.stage.){
+    //   print(i.name);
     // }
 
   }

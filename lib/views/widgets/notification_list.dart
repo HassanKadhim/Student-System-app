@@ -18,6 +18,7 @@ class NotificationList extends GetView<StudentController> {
             child: NotificationCard(
               controller.student.value.notifications[index].title,
               controller.student.value.notifications[index].body,
+              controller.student.value.notifications[index].color,
 
             ),
           );

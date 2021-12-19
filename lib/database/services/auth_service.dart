@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:http/http.dart' as http;
 
 import '../../config.dart';
@@ -12,7 +13,9 @@ class AuthService {
 
     var token = await http.post(Uri.parse("$api/auth/login"),
       body: {
-        "email": email , "password" : password
+        "email": email ,
+        "password" : password,
+
       },
     );
      if(token.statusCode == 200 || token.statusCode == 201){
