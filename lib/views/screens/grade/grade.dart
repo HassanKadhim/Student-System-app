@@ -19,25 +19,25 @@ class Grade extends GetView<StudentController> {
       backgroundColor: kPrimaryColor,
       body: SafeArea(
         bottom: false,
-          child: Directionality(
-            textDirection: TextDirection.rtl,
-                    child :Column(
-                      children: [
-                        SizedBox(height: 10),
-                        const Text(
-                          'الامتحانات ',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 18,
-                            color: kTextColor,
-                          ),
-                        ),
-                        const  Divider(color: kTextColor, thickness: 0.1),
-                        Expanded(child: GradeList()),
-                      ],
-                    )
+        child: Directionality(
+          textDirection: TextDirection.rtl,
+          child: Column(
+            children: [
+              SizedBox(height: 10),
+              const Text(
+                'الامتحانات ',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 18,
+                  color: kTextColor,
                 ),
               ),
+              const Divider(color: kTextColor, thickness: 0.1),
+              Expanded(child: GradeList()),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }

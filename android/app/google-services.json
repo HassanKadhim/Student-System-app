@@ -8,9 +8,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:739064775447:android:496c88ea4c7f4192a42d52",
+        "mobilesdk_app_id": "1:739064775447:android:0ca17c0ea70bad98a42d52",
         "android_client_info": {
-          "package_name": "com.example.student_system"
+          "package_name": "iq.google.student_system"
         }
       },
       "oauth_client": [

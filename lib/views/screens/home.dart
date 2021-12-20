@@ -81,8 +81,8 @@ class HomeScreen extends GetView<HomeController> {
           ),
           const SizedBox(height: 40,),
           HomeCard(
-              'االتنبيهات',
-              'يمكنك معرفة جميع االغيابات الخاصة بك',
+              'التنبيهات',
+              'يمكنك معرفة جميع التنبيهات الخاصة بك',
               'assets/icons/not.png',
               '/not'
           ),

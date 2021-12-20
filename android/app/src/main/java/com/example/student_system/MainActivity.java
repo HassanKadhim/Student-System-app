@@ -1,4 +1,4 @@
-package com.example.student_system;
+package iq.google.student_system;
 
 import io.flutter.embedding.android.FlutterActivity;
 

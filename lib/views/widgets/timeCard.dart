@@ -6,8 +6,7 @@ class TimeCard extends StatelessWidget {
   var _sbjectName;
   var _gredeName;
 
-
-  TimeCard (this._sbjectName, this._gredeName);
+  TimeCard(this._sbjectName, this._gredeName);
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +27,8 @@ class TimeCard extends StatelessWidget {
                 colors: [
                   Color(0xff11ccef),
                   Color(0xff117bef),
-                ],),
+                ],
+              ),
               color: kCategoryTextColor.withOpacity(0.5),
               borderRadius: BorderRadius.circular(10),
             ),
@@ -37,9 +37,8 @@ class TimeCard extends StatelessWidget {
               children: <Widget>[
                 Icon(
                   Icons.timer,
-                  color:kTextColor ,
+                  color: kTextColor,
                 )
-
               ],
             ),
           ),
